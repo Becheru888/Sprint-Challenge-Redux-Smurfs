@@ -3,7 +3,7 @@
 */
     
 import * as types from "../actions/index";
-import { type } from "os";
+
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
