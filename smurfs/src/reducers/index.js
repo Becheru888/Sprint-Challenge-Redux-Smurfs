@@ -3,6 +3,7 @@
 */
     
 import * as types from "../actions/index";
+import { type } from "os";
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -25,3 +26,22 @@ export const initialState = {
   There is no need for 'combineReducers' in this project.
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
+
+export const smurfReducer = (state = initialState, action) => {
+  switch(action.types){
+    case types.FETCH_START:
+      return {...state, fetchingSmurfs:true};
+    case types.FETCH_SUCCESS:
+      return {...state, smurfs: action.payload, fetchingSmurfs:false};
+    case types.FETCH_FAIL:
+      return {...state, error: action.payload, fetchingSmurfs:false};
+    case types.ADD_SMURF:
+      return {...state, addingSmurf:true};
+    case types.ADD_SUCCESS:
+      return {...state, smurfs: action.payload, addingSmurf:false};
+    case types.ADD_FAIL:
+      return {...state, error: action.payload, addingSmurf:false};
+     default:
+       return state;        
+  }
+}
