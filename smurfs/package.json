@@ -9,8 +9,11 @@
     "react-redux": "^5.0.6",
     "react-scripts": "1.1.0",
     "redux": "^3.7.2",
+    "redux-action-binder": "^1.0.5",
+    "redux-connect": "^9.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
