@@ -27,21 +27,21 @@ export const initialState = {
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
-export const smurfReducer = (state = initialState, action) => {
-  switch(action.types){
+export const smurfsReducer = (state = initialState, action) => {
+  switch (action.type) {
     case types.FETCH_START:
-      return {...state, fetchingSmurfs:true};
+      return { ...state, fetchingSmurfs: true };
     case types.FETCH_SUCCESS:
-      return {...state, smurfs: action.payload, fetchingSmurfs:false};
+      return { ...state, smurfs: action.payload, fetchingSmurfs: false };
     case types.FETCH_FAIL:
-      return {...state, error: action.payload, fetchingSmurfs:false};
+      return { ...state, error: action.payload, fetchingSmurfs: false };
     case types.ADD_SMURF:
-      return {...state, addingSmurf:true};
+      return { ...state, addingSmurf: true };
     case types.ADD_SUCCESS:
-      return {...state, smurfs: action.payload, addingSmurf:false};
+      return { ...state, smurfs: action.payload, addingSmurf: false };
     case types.ADD_FAIL:
-      return {...state, error: action.payload, addingSmurf:false};
-     default:
-       return state;        
+      return { ...state, error: action.payload, addingSmurf: false };
+    default:
+      return state;
   }
-}
+};

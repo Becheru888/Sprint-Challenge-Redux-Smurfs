@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchSmurfs, addSmurf } from "../actions/index";
 import { bindActionCreators } from "redux";
+import Smurf from './Smurf';
+import AddSmurf from './AddSmurf'
 import './App.css';
 
 
@@ -25,10 +27,13 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+       <StyledH2>SMURFS! 2.0 W/ Redux</StyledH2>
+        <StyledUl>
+          {smurfs.map(smurf => (
+            <Smurf smurf={smurf} key={smurf.id} />
+          ))}
+        </StyledUl>
+        <AddSmurf addSmurf={this.props.addSmurf} />
       </div>
     );
   }
@@ -63,3 +68,13 @@ export default connect(
 
 ///Styled Component
 
+const StyledH2 = styled.h2`
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+const StyledUl = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
