@@ -1,8 +1,15 @@
+import axios from "axios";
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
 */
+export const FETCH_START = "FETCH_START";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAIL = "FETCH_FAIL";
 
+export const ADD_SMURF = "ADD_SMURF";
+export const ADD_SUCCESS = "ADD_SUCCESS";
+export const ADD_FAIL = "ADD_FAIL";
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
